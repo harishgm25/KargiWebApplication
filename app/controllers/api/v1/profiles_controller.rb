@@ -21,7 +21,7 @@ module Api
   end
 
   def updateprofile
-        puts "-----------------------------------------------"
+        puts "----------------------------------**********************"
          
          @profile = Profile.where(:user_id =>(params[:profile][:id])).first
          
