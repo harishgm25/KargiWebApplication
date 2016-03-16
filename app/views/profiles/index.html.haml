@@ -1,0 +1,41 @@
+%h1 Listing profiles
+
+%table
+  %thead
+    %tr
+      %th Email
+      %th Mobile
+      %th Firstname
+      %th Lastname
+      %th Shopname
+      %th Address
+      %th Tanvat
+      %th Registerno
+      %th Shopestablishment
+      %th Tradelicense
+      %th Manufacturinglicense
+      %th
+      %th
+      %th
+
+  %tbody
+    - @profiles.each do |profile|
+      %tr
+        %td= User.find(profile.user_id).email 
+        %td= User.find(profile.user_id).mobile
+        %td= profile.firstname
+        %td= profile.lastname
+        %td= profile.shopname
+        %td= profile.address
+        %td= profile.tanvat
+        %td= profile.registerno
+        %td= profile.shopestablishment
+        %td= profile.tradelicense
+        %td= profile.manufacturinglicense
+        %td= link_to 'Show', profile
+        %td= link_to 'Edit', edit_profile_path(profile)
+        %td= link_to 'Destroy', profile, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+/= link_to 'New Profile', new_profile_path

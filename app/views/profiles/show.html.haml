@@ -1,0 +1,40 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = User.find(@profile.user_id).email 
+%p
+  %b Mobile:
+  = User.find(profile.user_id).mobile
+
+%p
+  %b Firstname:
+  = @profile.firstname
+%p
+  %b Lastname:
+  = @profile.lastname
+%p
+  %b Shopname:
+  = @profile.shopname
+%p
+  %b Address:
+  = @profile.address
+%p
+  %b Tanvat:
+  = @profile.tanvat
+%p
+  %b Registerno:
+  = @profile.registerno
+%p
+  %b Shopestablishment:
+  = @profile.shopestablishment
+%p
+  %b Tradelicense:
+  = @profile.tradelicense
+%p
+  %b Manufacturinglicense:
+  = @profile.manufacturinglicense
+
+= link_to 'Edit', edit_profile_path(@profile)
+\|
+= link_to 'Back', profiles_path
