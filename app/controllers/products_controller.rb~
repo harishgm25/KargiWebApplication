@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
   # GET /products
   # GET /products.json
-  # checking of git
+ 
   def index
     @products = Product.all
   end
@@ -76,6 +76,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description)
+      params.require(:product).permit(:name, :description, :color, :material, :price, :discount, :quantity,:image)
+
     end
 end

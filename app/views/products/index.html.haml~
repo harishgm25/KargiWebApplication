@@ -5,15 +5,25 @@
     %tr
       %th Name
       %th Description
+      %th Color
+      %th Material
+      %th Price
+      %th Discount
+      %th Quantity
       %th
       %th
       %th
-
   %tbody
     - @products.each do |product|
       %tr
         %td= product.name
         %td= product.description
+        %td= product.color
+        %td= product.material
+        %td= product.price
+        %td= product.discount
+        %td= product.quantity
+        %td= link_to image_tag(product.image.url(:thumb)), product.image.url(:original), :popup=>['original_image', 'height=700,width=900']
         %td= link_to 'Show', product
         %td= link_to 'Edit', edit_product_path(product)
         %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
