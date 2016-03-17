@@ -21,12 +21,20 @@ module Api
   end
 
   def updateprofile
-        puts "----------------------------------**********************"
-         
          @profile = Profile.where(:user_id =>(params[:profile][:id])).first
+         @profile.lastname = params[:profile][:lastname]
+         @profile.firstname = params[:profile][:firstname]
+         @profile.nameoffirm = params[:profile][:nameoffirm]
+         @profile.estyear = params[:profile][:estyear]
+         @profile.website = params[:profile][:website]
+         @profile.pan = params[:profile][:pan]
+         @profile.tanvat = params[:profile][:tanvat]
+         @profile.bankacc = params[:profile][:bankacc]
+         @profile.billingaddress = params[:profile][:billingaddress]
+         @profile.deliveryaddress = params[:profile][:deliveryaddress]
          
-         puts @profile.to_json
-      if @profile.update(profile_params)
+      if @profile.save!
+          
           render :json => {:success => true }
       else
        
@@ -51,7 +59,7 @@ module Api
         end
       end
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :shopname, :address, :tanvat, :registerno, :shopestablishment, :tradelicense, :manufacturinglicense)
+      params.require(:profile).permit(:firstname,:lastname,:tanvat,:nameoffirm,:estyear,:website,:pan,:bankacc,:billingaddress,:deliveryaddress,:id,:profileImg)
     end
    
     end

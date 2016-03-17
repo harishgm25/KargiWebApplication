@@ -1,5 +1,4 @@
 %p#notice= notice
-
 %p
   %b File:
   = link_to "Download", @profile.profileImg.url
@@ -14,29 +13,27 @@
   %b Firstname:
   = @profile.firstname
 %p
-  %b Lastname:
-  = @profile.lastname
+  %b Name of Firm:
+  = @profile.nameoffirm
 %p
-  %b Shopname:
-  = @profile.shopname
+  %b EST Year:
+  = @profile.estyear
 %p
-  %b Address:
-  = @profile.address
+  %b WebSite:
+  = @profile.website
 %p
-  %b Tanvat:
+  %b Tan/VAT:
   = @profile.tanvat
 %p
-  %b Registerno:
-  = @profile.registerno
+  %b BankACC:
+  = @profile.bankacc
 %p
-  %b Shopestablishment:
-  = @profile.shopestablishment
+  %b Billing Address:
+  = @profile.billingaddress
 %p
-  %b Tradelicense:
-  = @profile.tradelicense
-%p
-  %b Manufacturinglicense:
-  = @profile.manufacturinglicense
+  %b Delivery Address:
+  = @profile.deliveryaddress
+
 
 = link_to 'Edit', edit_profile_path(@profile)
 \|

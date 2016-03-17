@@ -4,13 +4,14 @@ class Profile
 
   field :firstname, type: String
   field :lastname, type: String
-  field :shopname, type: String
-  field :address, type: String
+  field :nameoffirm, type: String
+  field :estyear, type: String
+  field :website, type: String
+  field :pan, type: String
   field :tanvat, type: String
-  field :registerno, type: String
-  field :shopestablishment, type: String
-  field :tradelicense, type: String
-  field :manufacturinglicense, type: String
+  field :bankacc, type: String
+  field :billingaddress, type: String
+  field :deliveryaddress, type: String
 
   belongs_to :user,  :dependent => :destroy  
   accepts_nested_attributes_for   :user

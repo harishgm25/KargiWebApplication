@@ -32464,3 +32464,1121 @@ Processing by ProductsController#index as HTML
   Rendered products/index.html.haml within layouts/application (2.3ms)
 Completed 200 OK in 25ms (Views: 22.7ms)
 >>>>>>> a28bb5dac6a2a124fefd0c3733a13a6043852862
+
+
+Started POST "/users" for 14.194.44.231 at 2016-03-17 21:14:17 +0530
+Cannot render console from 14.194.44.231! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"har@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"har@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 357ms
+
+NoMethodError (undefined method `filed' for Profile:Class):
+  app/models/profile.rb:9:in `<class:Profile>'
+  app/models/profile.rb:1:in `<top (required)>'
+  app/controllers/users/registrations_controller.rb:17:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (39.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (190.9ms)
+
+
+Started POST "/users" for 49.203.73.47 at 2016-03-17 21:15:53 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"har@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"har@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 177.8634ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"har@gmail.com"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 122.2954ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6688ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=mobile_app_development command={:count=>"users", :query=>{"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"}} runtime: 21.3520ms
+  MOPED: 127.0.0.1:27017 INSERT       database=mobile_app_development collection=users documents=[{"_id"=>BSON::ObjectId('56ead1313b80a10f6c000001'), "email"=>"har@gmail.com", "encrypted_password"=>"$2a$10$XY7rlHVja1HJodBTSA1fg.tqUAUbCY4Ly.1LcC/Tb9hEOGPM8UfIC", "sign_in_count"=>0, "mobile"=>"9036272643", "roll"=>"Manufacture", "authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"}] flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.5018ms
+  MOPED: 127.0.0.1:27017 INSERT       database=mobile_app_development collection=profiles documents=[{"_id"=>BSON::ObjectId('56ead1313b80a10f6c000000'), "user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}] flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.8212ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"har@gmail.com", :_id=>{"$ne"=>BSON::ObjectId('56ead1313b80a10f6c000001')}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 135.4510ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643", :_id=>{"$ne"=>BSON::ObjectId('56ead1313b80a10f6c000001')}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7985ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')} update={"$set"=>{"email"=>"har@gmail.com", "encrypted_password"=>"$2a$10$XY7rlHVja1HJodBTSA1fg.tqUAUbCY4Ly.1LcC/Tb9hEOGPM8UfIC", "sign_in_count"=>0, "mobile"=>"9036272643", "roll"=>"Manufacture", "authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 78.1694ms
+Completed 200 OK in 854ms (Views: 17.0ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:16:22 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7226ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6408ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7579ms
+Completed 200 OK in 5ms (Views: 0.8ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:19:41 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5525ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5871ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6271ms
+Completed 200 OK in 5ms (Views: 0.8ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:21:56 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"firm name", "estyeart"=>"1992", "website"=>"www.test.com", "pan"=>"13568695ax", "tanvat"=>"134589", "bankacc"=>"134jgfjh", "billingaddress"=>"126/2, bidadi kethaganahalli road", "deliveryaddress"=>"vijayanagar Mysore ", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7053ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6947ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7276ms
+Unpermitted parameters: nameoffirm, estyeart, website, pan, bankacc, billingaddress, deliveryaddress, id
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56ead1313b80a10f6c000000')} update={"$set"=>{"firstname"=>"hari", "lastname"=>"mohan", "tanvat"=>"134589"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 1.2441ms
+Completed 200 OK in 12ms (Views: 0.4ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:22:16 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.0351ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.9997ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.8877ms
+Completed 200 OK in 11ms (Views: 1.7ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:30:33 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6162ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6974ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5823ms
+Completed 200 OK in 5ms (Views: 1.2ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:30:54 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"gghj", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9260ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8910ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.8501ms
+Unpermitted parameters: nameoffirm, estyear, website, pan, bankacc, billingaddress, deliveryaddress, id
+Completed 200 OK in 11ms (Views: 0.5ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:33:35 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7526ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6459ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7197ms
+Completed 200 OK in 8ms (Views: 1.2ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:34:51 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"gikkk", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8908ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4690ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5430ms
+Unpermitted parameters: nameoffirm, estyear, website, pan, bankacc, billingaddress, deliveryaddress, id
+Completed 200 OK in 8ms (Views: 0.4ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:39:20 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"gikkk", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7419ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4392ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5081ms
+Unpermitted parameters: nameoffirm, estyear, website, pan, bankacc, billingaddress, deliveryaddress, id
+Completed 200 OK in 56ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:39:32 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7039ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7871ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7971ms
+Completed 200 OK in 6ms (Views: 0.8ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:40:05 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"12467890", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5196ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5694ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6305ms
+Unpermitted parameters: nameoffirm, estyear, website, pan, bankacc, billingaddress, deliveryaddress, id
+Completed 200 OK in 6ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:42:28 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:55: syntax error, unexpected ',', expecting ')'
+,:profileImg)
+ ^):
+  app/controllers/api/v1/profiles_controller.rb:55: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (37.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.8ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:46:17 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5766ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5645ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6860ms
+Completed 200 OK in 5ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:46:43 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"ABC", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5384ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5646ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6194ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')} update={"$set"=>{"nameoffirm"=>"ABC", "estyear"=>"null", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.9373ms
+Completed 200 OK in 11ms (Views: 0.5ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:46:52 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7917ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8207ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.9639ms
+Completed 200 OK in 8ms (Views: 1.6ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:48:30 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9400ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7450ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.8297ms
+Completed 200 OK in 7ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:50:04 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"abcfirm", "estyear"=>"1997", "website"=>"www.google.com", "pan"=>"123456780", "tanvat"=>"134589", "bankacc"=>"1234567af", "billingaddress"=>"bidadi", "deliveryaddress"=>"Mysore", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7518ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8020ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.9726ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')} update={"$set"=>{"nameoffirm"=>"abcfirm", "estyear"=>"1997", "website"=>"www.google.com", "pan"=>"123456780", "bankacc"=>"1234567af", "billingaddress"=>"bidadi", "deliveryaddress"=>"Mysore"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.9330ms
+Completed 200 OK in 63ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:57:31 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7198ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6788ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.8279ms
+Completed 200 OK in 6ms (Views: 0.8ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:57:50 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"hari", "nameoffirm"=>"ggggghhhh", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6557ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7035ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7327ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')} update={"$set"=>{"nameoffirm"=>"ggggghhhh", "estyear"=>"null", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.9018ms
+Completed 200 OK in 9ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:58:02 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.0384ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 1.0457ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.2283ms
+Completed 200 OK in 11ms (Views: 1.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 21:58:13 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"moh", "firstname"=>"hari", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"134589", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8487ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7656ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.9857ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')} update={"$set"=>{"lastname"=>"moh", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 1.3891ms
+Completed 200 OK in 18ms (Views: 0.6ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 21:58:28 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56ead1313b80a10f6c000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.0297ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"MPXxxT1Yz_5iiAt5Lp4N"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.9063ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56ead1313b80a10f6c000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7968ms
+Completed 200 OK in 8ms (Views: 0.7ms)
+
+
+Started POST "/users" for 49.203.73.47 at 2016-03-17 22:00:48 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"har@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"har@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5807ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"har@gmail.com"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5834ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4395ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=mobile_app_development command={:count=>"users", :query=>{"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"}} runtime: 0.6100ms
+  MOPED: 127.0.0.1:27017 INSERT       database=mobile_app_development collection=users documents=[{"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001'), "email"=>"har@gmail.com", "encrypted_password"=>"$2a$10$m3xjZEQD0S4fg57PFXwvUO.TJZBI3Hxg4XEJh3u0ozTlcaLOG/cJi", "sign_in_count"=>0, "mobile"=>"9036272643", "roll"=>"Manufacture", "authentication_token"=>"tjAzyKdGv5vzrDrxZziz"}] flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 19.1220ms
+  MOPED: 127.0.0.1:27017 INSERT       database=mobile_app_development collection=profiles documents=[{"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000'), "user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}] flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.6978ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"har@gmail.com", :_id=>{"$ne"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8326ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643", :_id=>{"$ne"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8938ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} update={"$set"=>{"email"=>"har@gmail.com", "encrypted_password"=>"$2a$10$m3xjZEQD0S4fg57PFXwvUO.TJZBI3Hxg4XEJh3u0ozTlcaLOG/cJi", "sign_in_count"=>0, "mobile"=>"9036272643", "roll"=>"Manufacture", "authentication_token"=>"tjAzyKdGv5vzrDrxZziz"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 14.7036ms
+Completed 200 OK in 230ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 22:01:02 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6494ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7342ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7579ms
+Completed 200 OK in 5ms (Views: 0.7ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 22:02:40 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumar", "firstname"=>"mohan", "nameoffirm"=>"abcde", "estyear"=>"12345", "website"=>"such hgg", "pan"=>"srgjkk", "tanvat"=>"GC shin sg", "bankacc"=>"123gdghh", "billingaddress"=>"bidadi", "deliveryaddress"=>"dhjfjgjj", "id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9125ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5461ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.0193ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} update={"$set"=>{"firstname"=>"mohan", "lastname"=>"kumar", "tanvat"=>"GC shin sg", "nameoffirm"=>"abcde", "estyear"=>"12345", "website"=>"such hgg", "pan"=>"srgjkk", "bankacc"=>"123gdghh", "billingaddress"=>"bidadi", "deliveryaddress"=>"dhjfjgjj"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.9281ms
+Completed 200 OK in 55ms (Views: 0.4ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 22:03:01 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6391ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7052ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7588ms
+Completed 200 OK in 5ms (Views: 0.7ms)
+
+
+Started GET "/" for 116.202.133.8 at 2016-03-17 22:05:59 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (46.3ms)
+Completed 200 OK in 1470ms (Views: 1454.6ms)
+
+
+Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-38a9c773adcfa485298d8339ce300a1bd7162572c2d7d4ae1a6e9bf41c5812bb.css?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 116.202.133.8 at 2016-03-17 22:06:01 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/profiles" for 116.202.133.8 at 2016-03-17 22:06:09 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9276ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5076ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 43.1455ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3416ms
+  Rendered profiles/index.html.haml within layouts/application (57.3ms)
+Completed 200 OK in 185ms (Views: 184.2ms)
+
+
+Started GET "/profileimgs/thumb/missing.png" for 116.202.133.8 at 2016-03-17 22:06:09 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [GET] "/profileimgs/thumb/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (100.4ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (349.0ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000/edit" for 116.202.133.8 at 2016-03-17 22:06:18 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5051ms
+  Rendered profiles/_form.html.haml (248.1ms)
+  Rendered profiles/edit.html.haml within layouts/application (261.2ms)
+Completed 500 Internal Server Error in 281ms
+
+ActionView::Template::Error (undefined method `shopname' for #<Profile:0x007fa046117810>):
+    22:     = f.text_field :lastname
+    23:   .field
+    24:     = f.label :shopname
+    25:     = f.text_field :shopname
+    26:   .field
+    27:     = f.label :address
+    28:     = f.text_field :address
+  app/views/profiles/_form.html.haml:25:in `block in _app_views_profiles__form_html_haml___1869746972508774888_70163176226400'
+  app/views/profiles/_form.html.haml:1:in `_app_views_profiles__form_html_haml___1869746972508774888_70163176226400'
+  app/views/profiles/edit.html.haml:3:in `_app_views_profiles_edit_html_haml___3322298354318564503_70163173754540'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.2ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000/edit" for 116.202.133.8 at 2016-03-17 22:06:19 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5952ms
+  Rendered profiles/_form.html.haml (10.7ms)
+  Rendered profiles/edit.html.haml within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `shopname' for #<Profile:0x007fa03489a680>):
+    22:     = f.text_field :lastname
+    23:   .field
+    24:     = f.label :shopname
+    25:     = f.text_field :shopname
+    26:   .field
+    27:     = f.label :address
+    28:     = f.text_field :address
+  app/views/profiles/_form.html.haml:25:in `block in _app_views_profiles__form_html_haml___1869746972508774888_70163023921540'
+  app/views/profiles/_form.html.haml:1:in `_app_views_profiles__form_html_haml___1869746972508774888_70163023921540'
+  app/views/profiles/edit.html.haml:3:in `_app_views_profiles_edit_html_haml___3322298354318564503_70163026481500'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.7ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000/edit" for 116.202.133.8 at 2016-03-17 22:10:53 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6536ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.4964ms
+  Rendered profiles/_form.html.haml (14.1ms)
+  Rendered profiles/edit.html.haml within layouts/application (16.4ms)
+Completed 200 OK in 52ms (Views: 47.4ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000/edit" for 116.202.133.8 at 2016-03-17 22:11:34 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6223ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3616ms
+  Rendered profiles/_form.html.haml (15.1ms)
+  Rendered profiles/edit.html.haml within layouts/application (17.3ms)
+Completed 200 OK in 53ms (Views: 49.5ms)
+
+
+Started PATCH "/profiles/56eadbb83b80a14bc0000000" for 116.202.133.8 at 2016-03-17 22:11:44 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AvXStghR+gBwcfmNJk7Mn051BpsBLtomPTS5APXLM0vO8/IijdmA3o5yK8Mh5WMfRXoVdoHLdCSDl033K7WPnQ==", "profile"=>{"firstname"=>"mohan", "lastname"=>"akasasd", "nameoffirm"=>"aassad", "estyear"=>"", "website"=>"", "pan"=>"", "tanvat"=>"", "bankacc"=>"", "billingaddress"=>"", "deliveryaddress"=>""}, "commit"=>"Save", "id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.7329ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} update={"$set"=>{"firstname"=>"mohan", "lastname"=>"akasasd", "tanvat"=>"", "nameoffirm"=>"aassad", "estyear"=>"", "website"=>"", "pan"=>"", "bankacc"=>"", "billingaddress"=>"", "deliveryaddress"=>""}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 11.1160ms
+Redirected to http://116.202.133.8:3000/profiles/56eadbb83b80a14bc0000000
+Completed 302 Found in 20ms
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000" for 116.202.133.8 at 2016-03-17 22:11:44 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5509ms
+  Rendered profiles/show.html.haml within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 48ms
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: %p#notice= notice
+    2: profile.firstname
+    3:         %td= profile.lastname
+    4:         %td= profile.estyear
+    5:         %td= profile.website
+    6:         %td= profile.pan
+  app/views/profiles/show.html.haml:3
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.6ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000" for 116.202.133.8 at 2016-03-17 22:12:23 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.0035ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5929ms
+  Rendered profiles/show.html.haml within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %p and nested within it.):
+    1: %p#notice= notice
+    2:         %td= profile.lastname
+    3:         %td= profile.estyear
+    4:         %td= profile.website
+    5:         %td= profile.pan
+  app/views/profiles/show.html.haml:2
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.3ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000" for 116.202.133.8 at 2016-03-17 22:13:56 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7217ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.3021ms
+  Rendered profiles/show.html.haml within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %p and nested within it.):
+    1: %p#notice= notice
+    2:  %p
+    3:   %b File:
+    4:   = link_to "Download", @profile.profileImg.url
+    5: %p
+  app/views/profiles/show.html.haml:2
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.5ms)
+
+
+Started GET "/profiles/56eadbb83b80a14bc0000000" for 116.202.133.8 at 2016-03-17 22:14:14 +0530
+Cannot render console from 116.202.133.8! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"56eadbb83b80a14bc0000000"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000000')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.6631ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5338ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 0.5477ms
+  Rendered profiles/show.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 46ms (Views: 42.8ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 22:15:59 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7148ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6869ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7838ms
+Completed 200 OK in 6ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 22:16:58 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"akasasd", "firstname"=>"mohan", "nameoffirm"=>"aas", "estyear"=>"1223", "website"=>"wwwe", "pan"=>"wwrt", "tanvat"=>"@3567", "bankacc"=>"asfgh", "billingaddress"=>"sfhj", "deliveryaddress"=>"dghj", "id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9988ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.9236ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.9459ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} update={"$set"=>{"tanvat"=>"@3567", "nameoffirm"=>"aas", "estyear"=>"1223", "website"=>"wwwe", "pan"=>"wwrt", "bankacc"=>"asfgh", "billingaddress"=>"sfhj", "deliveryaddress"=>"dghj"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 1.3936ms
+Completed 200 OK in 19ms (Views: 0.7ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 49.203.73.47 at 2016-03-17 22:17:15 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4638ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5824ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6747ms
+Completed 200 OK in 7ms (Views: 1.3ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 49.203.73.47 at 2016-03-17 22:20:37 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"akasasd", "firstname"=>"mohan", "nameoffirm"=>"aassad", "estyear"=>"555", "website"=>"gvb", "pan"=>"qwer", "tanvat"=>"dghj", "bankacc"=>"sfhh", "billingaddress"=>"sfhjk", "deliveryaddress"=>"fhjkk", "id"=>"56eadbb83b80a14bc0000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6564ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"tjAzyKdGv5vzrDrxZziz"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.8183ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.0356ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eadbb83b80a14bc0000001')} update={"$set"=>{"tanvat"=>"dghj", "estyear"=>"555", "website"=>"gvb", "pan"=>"qwer", "bankacc"=>"sfhh", "billingaddress"=>"sfhjk", "deliveryaddress"=>"fhjkk"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.8512ms
+Completed 200 OK in 15ms (Views: 0.3ms)
+
+
+Started POST "/users" for 49.203.73.47 at 2016-03-17 22:29:42 +0530
+Cannot render console from 49.203.73.47! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hari@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"hari@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.4554ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"hari@gmail.com"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.9112ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7059ms
+Completed 422 Unprocessable Entity in 364ms (Views: 0.3ms)
+
+
+Started POST "/users" for 116.202.176.207 at 2016-03-17 23:05:00 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Users::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"hari@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"hari@gmail.com", "mobile"=>"9036272643", "roll"=>"Manufacture", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 160.2410ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"hari@gmail.com"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 103.4450ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4969ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=mobile_app_development command={:count=>"users", :query=>{"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"}} runtime: 41.2140ms
+  MOPED: 127.0.0.1:27017 INSERT       database=mobile_app_development collection=users documents=[{"_id"=>BSON::ObjectId('56eaeac53b80a1761e000001'), "email"=>"hari@gmail.com", "encrypted_password"=>"$2a$10$F7V2UYhbMC9SMM09umV70.It85cmQfIb5U8VWEQVuFxjRYRxDKxGO", "sign_in_count"=>0, "mobile"=>"9036272643", "roll"=>"Manufacture", "authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"}] flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 80.9936ms
+  MOPED: 127.0.0.1:27017 INSERT       database=mobile_app_development collection=profiles documents=[{"_id"=>BSON::ObjectId('56eaeac53b80a1761e000000'), "user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}] flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 211.3908ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"email"=>"hari@gmail.com", :_id=>{"$ne"=>BSON::ObjectId('56eaeac53b80a1761e000001')}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 48.4005ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"mobile"=>"9036272643", :_id=>{"$ne"=>BSON::ObjectId('56eaeac53b80a1761e000001')}} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6475ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=users selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')} update={"$set"=>{"email"=>"hari@gmail.com", "encrypted_password"=>"$2a$10$F7V2UYhbMC9SMM09umV70.It85cmQfIb5U8VWEQVuFxjRYRxDKxGO", "sign_in_count"=>0, "mobile"=>"9036272643", "roll"=>"Manufacture", "authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 21.4325ms
+Completed 200 OK in 1121ms (Views: 14.1ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:05:09 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5878ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 15.4980ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 15.1438ms
+Completed 200 OK in 36ms (Views: 1.1ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:05:53 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"harish", "nameoffirm"=>"kumar stores", "estyear"=>"122333", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8411ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4723ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4432ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')} update={"$set"=>{"firstname"=>"harish", "lastname"=>"mohan", "tanvat"=>"null", "nameoffirm"=>"kumar stores", "estyear"=>"122333", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.6860ms
+Completed 200 OK in 10ms (Views: 0.7ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:05:59 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5265ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7624ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.9692ms
+Completed 200 OK in 9ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:07:12 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:27: syntax error, unexpected '!', expecting keyword_then or ';' or '\n'
+/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:58: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/api/v1/profiles_controller.rb:27: syntax error, unexpected '!', expecting keyword_then or ';' or '\n'
+  app/controllers/api/v1/profiles_controller.rb:58: syntax error, unexpected keyword_end, expecting $end
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (64.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (169.6ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:07:32 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:27: syntax error, unexpected '!', expecting keyword_then or ';' or '\n'
+/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:58: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/api/v1/profiles_controller.rb:27: syntax error, unexpected '!', expecting keyword_then or ';' or '\n'
+  app/controllers/api/v1/profiles_controller.rb:58: syntax error, unexpected keyword_end, expecting $end
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.6ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:07:39 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:27: syntax error, unexpected '!', expecting keyword_then or ';' or '\n'
+/home/harish/codes/MobileApp/app/controllers/api/v1/profiles_controller.rb:58: syntax error, unexpected keyword_end, expecting $end):
+  app/controllers/api/v1/profiles_controller.rb:27: syntax error, unexpected '!', expecting keyword_then or ';' or '\n'
+  app/controllers/api/v1/profiles_controller.rb:58: syntax error, unexpected keyword_end, expecting $end
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (56.5ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.8ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:08:39 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6413ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4746ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5175ms
+Completed 200 OK in 7ms (Views: 1.4ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:11:59 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"kumar", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6110ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5205ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4889ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')} update={"$set"=>{"firstname"=>"kumar", "lastname"=>"mohan", "tanvat"=>"null", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.6533ms
+Completed 200 OK in 10ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:12:02 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4073ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3878ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4551ms
+Completed 200 OK in 5ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:13:10 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"aASSADSA", "firstname"=>"namamsdnas", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4787ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4035ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4645ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')} update={"$set"=>{"firstname"=>"namamsdnas", "lastname"=>"aASSADSA", "tanvat"=>"null", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 1.3546ms
+Completed 200 OK in 14ms (Views: 0.4ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:13:13 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4308ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3878ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4085ms
+Completed 200 OK in 6ms (Views: 1.4ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:16:53 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"mohan", "firstname"=>"kuamr", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6222ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4598ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4739ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')} update={"$set"=>{"lastname"=>"mohan", "firstname"=>"kuamr", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.7814ms
+Completed 200 OK in 11ms (Views: 0.4ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:17:03 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.1016ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 1.0930ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.5566ms
+Completed 200 OK in 14ms (Views: 2.6ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:19:17 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"null", "firstname"=>"moah", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6471ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4492ms
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `update' for nil:NilClass):
+  app/controllers/api/v1/profiles_controller.rb:29:in `updateprofile'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (74.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.7ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:21:16 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"null", "firstname"=>"moah", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4635ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3556ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4000ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000000')} update={"$set"=>{"lastname"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 305.5147ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000000')} update={"$set"=>{"firstname"=>"moah", "tanvat"=>"null", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 46.4096ms
+Completed 200 OK in 360ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:21:28 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9918ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6072ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4767ms
+Completed 200 OK in 7ms (Views: 0.8ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:28:08 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kuamr", "firstname"=>"moah", "nameoffirm"=>"firm name", "estyear"=>"null", "website"=>"www.googlw.com", "pan"=>"123456", "tanvat"=>"1212121", "bankacc"=>"121212asda", "billingaddress"=>"bidaidi ", "deliveryaddress"=>"mydsoowq", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4755ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4502ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4732ms
+Completed 500 Internal Server Error in 7ms
+
+NameError (undefined local variable or method `profile' for #<Api::V1::ProfilesController:0x007f800866b1a8>):
+  app/controllers/api/v1/profiles_controller.rb:34:in `updateprofile'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.2ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:28:27 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4591ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3587ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4425ms
+Completed 200 OK in 5ms (Views: 1.0ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:29:53 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5106ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3483ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4137ms
+Completed 200 OK in 6ms (Views: 0.7ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:30:05 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumae", "firstname"=>"moah", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.9306ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.6256ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7717ms
+Completed 500 Internal Server Error in 12ms
+
+NameError (undefined local variable or method `profile' for #<Api::V1::ProfilesController:0x007f8008222588>):
+  app/controllers/api/v1/profiles_controller.rb:34:in `updateprofile'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.2ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:30:32 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumae", "firstname"=>"moah", "nameoffirm"=>"null", "estyear"=>"null", "website"=>"null", "pan"=>"null", "tanvat"=>"null", "bankacc"=>"null", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4979ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3713ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4791ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000000')} update={"$set"=>{"lastname"=>"kumae"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 0.5918ms
+Completed 200 OK in 7ms (Views: 0.3ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:30:35 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.2750ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 1.5611ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.5538ms
+Completed 200 OK in 9ms (Views: 1.2ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:31:44 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumae", "firstname"=>"moah", "nameoffirm"=>"name firrm", "estyear"=>"1993", "website"=>"www.google.com", "pan"=>"ATXPM8820e", "tanvat"=>"123AN121", "bankacc"=>"123SMN", "billingaddress"=>"null", "deliveryaddress"=>"null", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.4875ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4897ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.2516ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000000')} update={"$set"=>{"nameoffirm"=>"name firrm", "estyear"=>"1993", "website"=>"www.google.com", "pan"=>"ATXPM8820e", "tanvat"=>"123AN121", "bankacc"=>"123SMN"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 1.1577ms
+Completed 200 OK in 17ms (Views: 1.1ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:31:53 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.3941ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.3656ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.3955ms
+Completed 200 OK in 5ms (Views: 0.8ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-17 23:32:13 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumae", "firstname"=>"moah", "nameoffirm"=>"name firrm", "estyear"=>"1993", "website"=>"www.google.com", "pan"=>"ATXPM8820e", "tanvat"=>"123AN121", "bankacc"=>"123SMN", "billingaddress"=>"MYSORE", "deliveryaddress"=>"MYSore", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7058ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4469ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.6738ms
+  MOPED: 127.0.0.1:27017 UPDATE       database=mobile_app_development collection=profiles selector={"_id"=>BSON::ObjectId('56eaeac53b80a1761e000000')} update={"$set"=>{"billingaddress"=>"MYSORE", "deliveryaddress"=>"MYSore"}} flags=[]
+                         COMMAND      database=mobile_app_development command={:getlasterror=>1, :w=>1} runtime: 1.4227ms
+Completed 200 OK in 11ms (Views: 0.7ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-17 23:33:00 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5698ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 1.0289ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.1679ms
+Completed 200 OK in 12ms (Views: 2.0ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-18 00:09:12 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.5292ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 53.6279ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 53.2333ms
+Completed 200 OK in 121ms (Views: 10.1ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-18 00:09:24 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumae", "firstname"=>"moah", "nameoffirm"=>"name firrm", "estyear"=>"1993", "website"=>"www.google.com", "pan"=>"ATXPM8820e", "tanvat"=>"123AN121", "bankacc"=>"123SMN", "billingaddress"=>"MYSORE", "deliveryaddress"=>"MYSore", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.6272ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.9695ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7291ms
+Completed 200 OK in 8ms (Views: 0.5ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-18 00:09:30 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 1.0500ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7644ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 1.1456ms
+Completed 200 OK in 9ms (Views: 1.2ms)
+
+
+Started GET "/api/v1/products" for 116.202.176.207 at 2016-03-18 00:20:03 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProductsController#index as JSON
+  Parameters: {"product"=>{}}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7036ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.5126ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=products selector={} flags=[] limit=0 skip=0 batch_size=nil fields=nil runtime: 18.4386ms
+Completed 200 OK in 79ms (Views: 23.6ms)
+
+
+Started POST "/api/v1/profiles/getprofile" for 116.202.176.207 at 2016-03-18 00:20:18 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#getprofile as JSON
+  Parameters: {"profile"=>{"id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.8308ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.4052ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.4299ms
+Completed 200 OK in 7ms (Views: 0.9ms)
+
+
+Started POST "/api/v1/profiles/updateprofile" for 116.202.176.207 at 2016-03-18 00:20:23 +0530
+Cannot render console from 116.202.176.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V1::ProfilesController#updateprofile as JSON
+  Parameters: {"profile"=>{"lastname"=>"kumae", "firstname"=>"moah", "nameoffirm"=>"name firrm", "estyear"=>"1993", "website"=>"www.google.com", "pan"=>"ATXPM8820e", "tanvat"=>"123AN121", "bankacc"=>"123SMN", "billingaddress"=>"MYSORE", "deliveryaddress"=>"MYSore", "id"=>"56eaeac53b80a1761e000001"}}
+Can't verify CSRF token authenticity
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} runtime: 0.7383ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=users selector={"authentication_token"=>"t5UWXL9_zPgPyrZ-2Bzn"} flags=[] limit=-1 skip=0 batch_size=nil fields={:_id=>1} runtime: 0.7779ms
+  MOPED: 127.0.0.1:27017 QUERY        database=mobile_app_development collection=profiles selector={"$query"=>{"user_id"=>BSON::ObjectId('56eaeac53b80a1761e000001')}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 batch_size=nil fields=nil runtime: 0.7462ms
+Completed 200 OK in 10ms (Views: 0.5ms)

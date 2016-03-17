@@ -8,13 +8,14 @@
       %th Mobile
       %th Firstname
       %th Lastname
-      %th Shopname
-      %th Address
-      %th Tanvat
-      %th Registerno
-      %th Shopestablishment
-      %th Tradelicense
-      %th Manufacturinglicense
+      %th Name of Firm
+      %th ESTYear
+      %th Website
+      %th PAN
+      %th VAT/TIN
+      %th BankAC
+      %th Billing Address
+      %th Delivery Address
       %th
       %th
       %th
@@ -27,13 +28,14 @@
         %td= User.find(profile.user_id).mobile
         %td= profile.firstname
         %td= profile.lastname
-        %td= profile.shopname
-        %td= profile.address
+        %td= profile.nameoffirm
+        %td= profile.estyear
+        %td= profile.website
+        %td= profile.pan
         %td= profile.tanvat
-        %td= profile.registerno
-        %td= profile.shopestablishment
-        %td= profile.tradelicense
-        %td= profile.manufacturinglicense
+        %td= profile.bankacc
+        %td= profile.billingaddress
+        %td= profile.deliveryaddress
         %td= link_to 'Show', profile
         %td= link_to 'Edit', edit_profile_path(profile)
         %td= link_to 'Destroy', profile, :method => :delete, :data => { :confirm => 'Are you sure?' }
