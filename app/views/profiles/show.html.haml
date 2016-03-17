@@ -1,11 +1,14 @@
 %p#notice= notice
 
 %p
+  %b File:
+  = link_to "Download", @profile.profileImg.url
+%p
   %b Email:
   = User.find(@profile.user_id).email 
 %p
   %b Mobile:
-  = User.find(profile.user_id).mobile
+  = User.find(@profile.user_id).mobile
 
 %p
   %b Firstname:

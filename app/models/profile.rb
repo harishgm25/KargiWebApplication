@@ -1,5 +1,7 @@
 class Profile
   include Mongoid::Document
+  include Mongoid::Paperclip
+
   field :firstname, type: String
   field :lastname, type: String
   field :shopname, type: String
@@ -12,5 +14,9 @@ class Profile
 
   belongs_to :user,  :dependent => :destroy  
   accepts_nested_attributes_for   :user
+
+   has_mongoid_attached_file :profileImg
+   do_not_validate_attachment_file_type :profileImg
+
   
 end

@@ -3,6 +3,7 @@
 %table
   %thead
     %tr
+      %th ProfileImg
       %th Email
       %th Mobile
       %th Firstname
@@ -21,6 +22,7 @@
   %tbody
     - @profiles.each do |profile|
       %tr
+        %td=image_tag profile.profileImg.url(:thumb)
         %td= User.find(profile.user_id).email 
         %td= User.find(profile.user_id).mobile
         %td= profile.firstname

@@ -8,11 +8,9 @@
 
 
   .field
-    = f.label :mobile
-    = f.text_field :mobile, :value => User.find(@profile.user_id).mobile
-  .field
-    = f.label :email
-    = f.text_field :email, :value => User.find(@profile.user_id).email
+    = f.label :profileImg 
+    = f.file_field :profileImg
+  
   .field
     = f.label :lastname
     = f.text_field :lastname
