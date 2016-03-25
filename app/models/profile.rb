@@ -1,4 +1,4 @@
-class Profile
+  class Profile
   include Mongoid::Document
   include Mongoid::Paperclip
 
@@ -16,8 +16,7 @@ class Profile
   belongs_to :user,  :dependent => :destroy  
   accepts_nested_attributes_for   :user
 
-   has_mongoid_attached_file :profileImg
+   has_mongoid_attached_file :profileImg,:styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
    do_not_validate_attachment_file_type :profileImg
-
   
 end

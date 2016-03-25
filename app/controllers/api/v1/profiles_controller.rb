@@ -8,6 +8,7 @@ module Api
  
 
 
+
 # GET /profiles/1/edit
   def edit
 
@@ -15,27 +16,48 @@ module Api
 
   def getprofile
      @profile = Profile.where(:user_id =>(params[:profile][:id])).first
-     
-      return render :json => {:success => true, :profile => @profile }
+
+     return render :json => {:success => true, :profile => @profile , :profileImg => @profile.profileImg.url }
 
   end
 
   def updateprofile
-         @profile = Profile.where(:user_id =>(params[:profile][:id])).first
-         @profile.lastname = params[:profile][:lastname]
-         @profile.firstname = params[:profile][:firstname]
-         @profile.nameoffirm = params[:profile][:nameoffirm]
-         @profile.estyear = params[:profile][:estyear]
-         @profile.website = params[:profile][:website]
-         @profile.pan = params[:profile][:pan]
-         @profile.tanvat = params[:profile][:tanvat]
-         @profile.bankacc = params[:profile][:bankacc]
-         @profile.billingaddress = params[:profile][:billingaddress]
-         @profile.deliveryaddress = params[:profile][:deliveryaddress]
+       @profile = Profile.where(:user_id =>(params[:profile][:id])).first
+       puts profile_params
+       @profile.lastname = params[:profile][:lastname]
+       @profile.firstname = params[:profile][:firstname]
+       @profile.nameoffirm = params[:profile][:nameoffirm]
+       @profile.estyear = params[:profile][:estyear]
+       @profile.website = params[:profile][:website]
+       @profile.pan = params[:profile][:pan]
+       @profile.tanvat = params[:profile][:tanvat]
+       @profile.bankacc = params[:profile][:bankacc]
+       @profile.billingaddress = params[:profile][:billingaddress]
+       @profile.deliveryaddress = params[:profile][:deliveryaddress]
+       @profile.profileImg = params[:profile][:profileImg]  
+
+       
+      
          
       if @profile.save!
           
           render :json => {:success => true }
+      else
+       
+         # render :json =>{:succes => false}
+        return render :json => {:success => false, :errors => ["Update Failed"]}
+
+      end
+  end
+
+  def updatemobile
+       @profile = Profile.where(:user_id =>(params[:profile][:id])).first
+       puts profile_params
+       @user = User.find(@profile.user_id)
+       @user.mobile = params[:profile][:mobile]
+       if @user.save!
+          
+          render :json => {:success => true, :mobile => @user.mobile }
       else
        
          # render :json =>{:succes => false}
@@ -59,7 +81,7 @@ module Api
         end
       end
     def profile_params
-      params.require(:profile).permit(:firstname,:lastname,:tanvat,:nameoffirm,:estyear,:website,:pan,:bankacc,:billingaddress,:deliveryaddress,:id,:profileImg)
+      params.require(:profile).permit(:firstname,:lastname,:tanvat,:nameoffirm,:estyear,:website,:pan,:bankacc,:billingaddress,:deliveryaddress,:id,:profileImg,:mobile)
     end
    
     end

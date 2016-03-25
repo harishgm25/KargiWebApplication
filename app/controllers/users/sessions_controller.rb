@@ -23,8 +23,7 @@ class Users::SessionsController < Devise::SessionsController
         scope = Devise::Mapping.find_scope!(resource_or_scope)
         resource ||= resource_or_scope
         sign_in(scope, resource) unless warden.user(scope) == resource
-
-        return render :json => {:token => current_user.authentication_token,:userid => "" +current_user._id,:success => true, :email => current_user.email,:roll => current_user.roll}
+        return render :json => {:token => current_user.authentication_token,:userid => "" +current_user._id,:success => true, :email => current_user.email,:roll => current_user.roll,:mobile => current_user.mobile}
       end
 
 

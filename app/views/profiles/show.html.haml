@@ -1,7 +1,7 @@
 %p#notice= notice
 %p
   %b File:
-  = link_to "Download", @profile.profileImg.url
+  = image_tag @profile.profileImg.url(:original)
 %p
   %b Email:
   = User.find(@profile.user_id).email 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   post 'api/v1/profiles/updateprofile'  => "api/v1/profiles#updateprofile"
   post 'api/v1/profiles/getprofile'  => "api/v1/profiles#getprofile"
+  post 'api/v1/profiles/updatemobile'  => "api/v1/profiles#updatemobile"
 
 
  #devise_scope :user do

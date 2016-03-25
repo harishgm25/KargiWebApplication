@@ -23,12 +23,11 @@ respond_to :html,:json
                  format.html { redirect_to after_update_path_for(@user) }
                  
               else
-                return render :json => {:token => @user.authentication_token, :userid => ""+@user._id,  :success => true, :email => @user.email, :roll => @user.roll}
+                return render :json => {:token => @user.authentication_token, :userid => ""+@user._id,  :success => true, :email => @user.email, :roll => @user.roll, :mobile => @user.mobile}
               end
             end
         else
-             
-                respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+            respond_with resource, :location => after_inactive_sign_up_path_for(resource)
         end
    end
 
