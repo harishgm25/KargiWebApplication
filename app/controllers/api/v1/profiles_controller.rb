@@ -8,17 +8,32 @@ module Api
  
 
 
-
+ 
 # GET /profiles/1/edit
   def edit
 
   end
 
+  def showconnectionprofile
+      @jsonholder = Array.new
+      @profiles = Profile.without(:profileImg_fingerprint,:profileImg_content_type,:profileImg_file_size).all
+      @profiles.each do |profile|
+        @json = Array.new
+        @profilesuser= User.find(profile.user_id)
+       
+        @json << profile << {:imagepath => profile.profileImg.url.to_s}
+        @json << @profilesuser
+        
+        @jsonholder<<@json
+        puts "-----------------------------------------"
+      end
+      puts @jsonholder.as_json
+      return render :json => {:profile => @jsonholder }
+  end
+
   def getprofile
      @profile = Profile.where(:user_id =>(params[:profile][:id])).first
-
      return render :json => {:success => true, :profile => @profile , :profileImg => @profile.profileImg.url }
-
   end
 
   def updateprofile
@@ -88,3 +103,14 @@ module Api
   end
 end
 
+module BSON
+  class ObjectId
+    def to_json(*args)
+      to_s.to_json
+    end
+
+    def as_json(*args)
+      to_s.as_json
+    end
+  end
+end

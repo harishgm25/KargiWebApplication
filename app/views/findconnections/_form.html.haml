@@ -1,0 +1,16 @@
+= form_for @findconnection do |f|
+  - if @findconnection.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@findconnection.errors.count, "error")} prohibited this findconnection from being saved:"
+      %ul
+        - @findconnection.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :friend
+    = f.text_field :friend
+  .field
+    = f.label :status
+    = f.text_field :status
+  .actions
+    = f.submit 'Save'

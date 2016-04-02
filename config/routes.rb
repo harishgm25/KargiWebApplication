@@ -2,14 +2,15 @@ Rails.application.routes.draw do
 
 
 
+  resources :findconnections
   resources :profiles , :except => [:new,:create]
   get 'welcome/index'
   post 'api/v1/profiles/updateprofile'  => "api/v1/profiles#updateprofile"
   post 'api/v1/profiles/getprofile'  => "api/v1/profiles#getprofile"
-  post 'api/v1/profiles/updatemobile'  => "api/v1/profiles#updatemobile"
-
-
- #devise_scope :user do
+  post 'api/v1/profiles/showconnectionprofile'  => "api/v1/profiles#showconnectionprofile"
+  post 'api/v1/findconnections/addfriendrequest' => "api/v1/findconnections#addfriendrequest"
+ 
+ #devise_scope :user do     
   #  post "/api/v1/users" => "api/v1/users#create"
   #end
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :profiles
       resources :products
+      resources :findconnections
 
    end
   end

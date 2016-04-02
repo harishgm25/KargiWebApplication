@@ -41,6 +41,7 @@ class User
   field :authentication_token
   validates_uniqueness_of :mobile 
   has_one :profile
+  has_many :findconnection
 
   accepts_nested_attributes_for   :profile
 

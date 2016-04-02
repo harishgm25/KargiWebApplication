@@ -1,0 +1,23 @@
+%h1 Listing findconnections
+
+%table
+  %thead
+    %tr
+      %th Friend
+      %th Status
+      %th
+      %th
+      %th
+
+  %tbody
+    - @findconnections.each do |findconnection|
+      %tr
+        %td= findconnection.friend
+        %td= findconnection.status
+        %td= link_to 'Show', findconnection
+        %td= link_to 'Edit', edit_findconnection_path(findconnection)
+        %td= link_to 'Destroy', findconnection, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Findconnection', new_findconnection_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Friend:
+  = @findconnection.friend
+%p
+  %b Status:
+  = @findconnection.status
+
+= link_to 'Edit', edit_findconnection_path(@findconnection)
+\|
+= link_to 'Back', findconnections_path
