@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   post 'api/v1/profiles/getprofile'  => "api/v1/profiles#getprofile"
   post 'api/v1/profiles/showconnectionprofile'  => "api/v1/profiles#showconnectionprofile"
   post 'api/v1/findconnections/addfriendrequest' => "api/v1/findconnections#addfriendrequest"
- 
+  post 'api/v1/findconnections/getfriendrequeststatus' => "api/v1/findconnections#getfriendrequeststatus"
+  post 'api/v1/findconnections/getotherfriendrequeststatus' => "api/v1/findconnections/getotherfriendrequeststatus"                                                   
+  post 'api/v1/findconnections/approveotherfriendrequeststatus' => "api/v1/findconnections/approveotherfriendrequeststatus"
+  post 'api/v1/findconnections/removeotherfriendrequeststatus' => "api/v1/findconnections/removeotherfriendrequeststatus"
  #devise_scope :user do     
   #  post "/api/v1/users" => "api/v1/users#create"
   #end

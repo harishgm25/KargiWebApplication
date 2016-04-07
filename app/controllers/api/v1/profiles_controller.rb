@@ -28,7 +28,7 @@ module Api
         puts "-----------------------------------------"
       end
       puts @jsonholder.as_json
-      return render :json => {:profile => @jsonholder }
+      return render :json => {:success => true,:profile => @jsonholder }
   end
 
   def getprofile
