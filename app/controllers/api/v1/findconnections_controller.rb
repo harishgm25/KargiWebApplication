@@ -12,7 +12,7 @@ module Api
       puts "--------------------------"
       puts params[:findconnection][:friend]
       puts params[:findconnection][:user_id]
-       puts "--------------------------"
+      puts "--------------------------"
       @findconnection = Findconnection.new
       @findconnection.friend =  params[:findconnection][:friend].as_json
       @findconnection.user_id = params[:findconnection][:user_id]
@@ -21,7 +21,8 @@ module Api
     end 
 
     def getfriendrequeststatus
-       @jsonmyrequestarray = Array.new
+
+      @jsonmyrequestarray = Array.new
       userid = params[:findconnection][:user_id]
       puts params[:findconnection][:user_id]
       @findconnection = Findconnection.all
@@ -38,11 +39,10 @@ module Api
           @jsonmyrequestarray<<@jsonmyrequest
         end
       end
-    return render :json => {:success => true,:myfriendrequest => @jsonmyrequestarray }
+      return render :json => {:success => true,:myfriendrequest => @jsonmyrequestarray }
     end
 
-     def getotherfriendrequeststatus
-
+    def getotherfriendrequeststatus
       @jsonmyrequestarray = Array.new
       userid = params[:findconnection][:user_id]
       puts params[:findconnection][:user_id]
@@ -55,15 +55,16 @@ module Api
           @profile = Profile.without(:profileImg_fingerprint,:profileImg_content_type,:profileImg_file_size).where(:user_id=>row.user_id).first # getting profile of my friend
           @jsonmyrequest << @profile << {:imagepath => @profile.profileImg.url.to_s}
           @jsonmyrequest << User.find(@profile.user_id) 
-          puts "++++++++++++++++++++++++++++++++++++++++++++++++++"
           puts @jsonmyrequest.as_json
           @jsonmyrequestarray<<@jsonmyrequest
         end
       end
-    return render :json => {:success => true,:otherfriendrequest => @jsonmyrequestarray }
+      return render :json => {:success => true,:otherfriendrequest => @jsonmyrequestarray }
     end
 
-    def approveotherfriendrequeststatus
+  
+
+     def approveotherfriendrequeststatus
      # approving friend---------------------------
       friendid = params[:findconnection][:friend]
       userid = params[:findconnection][:user_id]
@@ -98,13 +99,9 @@ module Api
 
       return render :json => {:success => true }
     end
-      
-
- 
-
 
     def findconnection_params
-      params.require(:findconnection).permit(:friend, :status)
+      params.require(:findconnection).permit(:friend,:status,:user_id)
     end
 
 
