@@ -94,7 +94,7 @@ module Api
       @findconnection = Findconnection.where(:friend => friendid, :user_id =>userid)
       @findconnection.each do |row|
         puts "++++++++++++++++++++++++++++++++++++++++++++++++++"
-        row.destroy 
+          row.destroy 
       end
 
       return render :json => {:success => true }

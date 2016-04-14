@@ -20,12 +20,12 @@ module Api
       @profiles.each do |profile|
         @json = Array.new
         @profilesuser= User.find(profile.user_id)
-       
-        @json << profile << {:imagepath => profile.profileImg.url.to_s}
-        @json << @profilesuser
-        
-        @jsonholder<<@json
-        puts "-----------------------------------------"
+        if(@profilesuser.roll != params[:profile][:roll])
+          @json << profile << {:imagepath => profile.profileImg.url.to_s}
+          @json << @profilesuser
+          @jsonholder<<@json
+          puts "-----------------------------------------"
+        end
       end
       puts @jsonholder.as_json
       return render :json => {:success => true,:profile => @jsonholder }
@@ -96,7 +96,7 @@ module Api
         end
       end
     def profile_params
-      params.require(:profile).permit(:firstname,:lastname,:tanvat,:nameoffirm,:estyear,:website,:pan,:bankacc,:billingaddress,:deliveryaddress,:id,:profileImg,:mobile)
+      params.require(:profile).permit(:firstname,:lastname,:tanvat,:nameoffirm,:estyear,:website,:pan,:bankacc,:billingaddress,:deliveryaddress,:id,:profileImg,:mobile,:roll)
     end
    
     end
