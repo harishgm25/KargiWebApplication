@@ -6,9 +6,6 @@ module Api
       before_filter :restrict_access
       respond_to :json
  
-
-
- 
 # GET /profiles/1/edit
   def edit
 
