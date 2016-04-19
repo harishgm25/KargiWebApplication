@@ -46,7 +46,7 @@ module Api
        @profile.bankacc = params[:profile][:bankacc]
        @profile.billingaddress = params[:profile][:billingaddress]
        @profile.deliveryaddress = params[:profile][:deliveryaddress]
-       @profile.profileImg = params[:profile][:profileImg]  
+       #@profile.profileImg = params[:profile][:profileImg]  
 
        
       
@@ -61,6 +61,36 @@ module Api
 
       end
   end
+  def updateprofileimage
+       @profile = Profile.where(:user_id =>(params[:profile][:id])).first
+       @profile.profileImg = params[:profile][:profileImg]  
+
+      if @profile.save!
+          
+          render :json => {:success => true }
+      else
+       
+         # render :json =>{:succes => false}
+        return render :json => {:success => false, :errors => ["Update Failed"]}
+
+      end
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   def updatemobile
        @profile = Profile.where(:user_id =>(params[:profile][:id])).first

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :profiles , :except => [:new,:create]
   get 'welcome/index'
   post 'api/v1/profiles/updateprofile'  => "api/v1/profiles#updateprofile"
+   post 'api/v1/profiles/updateprofileimage'  => "api/v1/profiles#updateprofileimage"
   post 'api/v1/profiles/getprofile'  => "api/v1/profiles#getprofile"
   post 'api/v1/profiles/showconnectionprofile'  => "api/v1/profiles#showconnectionprofile"
   post 'api/v1/findconnections/addfriendrequest' => "api/v1/findconnections#addfriendrequest"
